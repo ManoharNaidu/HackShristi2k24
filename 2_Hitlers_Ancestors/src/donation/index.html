@@ -1,0 +1,103 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Rescue Donation</title>
+</head>
+<body>
+    <div class="donation-form">
+        <h2>Make a Donation</h2>
+        <p>This is your campaign description. It's a great place to tell visitors what this campaign is about, connect with your donors and draw attention to your cause.</p>
+        <form action="/donate" method="POST">
+            <div class="frequency">
+                <label for="frequency">Frequency:</label>
+                <select name="frequency" id="frequency">
+                    <option value="one-time">One Time</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+            <div class="amount">
+                <label for="amount">Amount:</label>
+                <div class="donation-buttons">
+                    <button type="submit" class="donation-button" name="amount" value="10">$10.00</button>
+                    <button type="submit" class="donation-button" name="amount" value="50">$50.00</button>
+                    <button type="submit" class="donation-button" name="amount" value="100">$100.00</button>
+                    <button type="submit" class="donation-button" name="amount" value="200">$200.00</button>
+                </div>
+                <button type="submit" class="donation-button" name="amount" value="other">Other</button>
+                <input type="text" name="other-amount" id="other-amount" placeholder="Enter amount">
+            </div>
+            <div class="submit">
+                <button type="submit">Donate</button>
+            </div>
+        </form>
+    </div>
+
+  <style>
+    .donation-form {
+  width: 500px;
+  margin: 50px auto;
+  border: 1px solid #ddd;
+  padding: 20px;
+}
+
+.donation-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.donation-form p {
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.donation-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.donation-form select,
+.donation-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.donation-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.donation-button {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.donation-button:hover {
+  background-color: #eee;
+}
+
+.submit {
+  text-align: center;
+}
+
+.submit button {
+  padding: 10px 20px;
+  background-color: #0095ff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.submit button:hover {
+  background-color: #007bff;
+}
+
+  </style>
+</body>
+</html>

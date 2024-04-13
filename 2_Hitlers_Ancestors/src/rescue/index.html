@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rescue Me!</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000e9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    width: 1000px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #map {
+    height: 300px;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  input[type="text"], input[type="file"], textarea, button {
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    max-width: 200px;
+  }
+  button:hover {
+    background-color: #6670cc;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <form id="locationForm">
+    <h2>Location Access</h2>
+    <div id="map"></div>
+    <button id="getLocationBtn" type="button">Get Current Location</button>
+    <input type="text" id="address" name="address" placeholder="Location">
+    <input type="file" id="image" name="image" accept="image/*">
+    <textarea id="description" name="description" placeholder="Description"></textarea>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+  function initMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 15
+    });
+
+    document.getElementById('getLocationBtn').addEventListener('click', function() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          map.setCenter(pos);
+          // Populate the location field with the current coordinates
+          document.getElementById('address').value = pos.lat + ', ' + pos.lng;
+        }, function() {
+          handleLocationError(true);
+        });
+      } else {
+        handleLocationError(false);
+      }
+    });
+
+    document.getElementById('locationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var address = document.getElementById('address').value;
+      var image = document.getElementById('image').value;
+      var description = document.getElementById('description').value;
+      
+      // Save to local storage
+      localStorage.setItem('address', address);
+      localStorage.setItem('image', image);
+      localStorage.setItem('description', description);
+      
+      alert('Thank You!! for saving my life!!!');
+    });
+  }
+
+  function handleLocationError(browserHasGeolocation) {
+    var errorDiv = document.createElement('div');
+    errorDiv.textContent = browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.';
+    document.getElementById('map').appendChild(errorDiv);
+  }
+</script>
+<!-- Replace YOUR_API_KEY with your actual API key -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA96qJkMHzjSLVUFLE9nftldNMMO6dqfkQ&callback=initMap"></script>
+</body>
+</html>

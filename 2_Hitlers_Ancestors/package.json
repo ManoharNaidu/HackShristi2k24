@@ -1,0 +1,39 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "html-webpack-plugin": "^5.6.0",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3",
+    "vite": "^5.2.8",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "animejs": "^3.2.2",
+    "body-parser": "^1.20.2",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.4",
+    "sequelize": "^6.37.2",
+    "sequelize-cli": "^6.6.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pranavupadhyay123/HackathonShristiKutiaKeSath.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pranavupadhyay123/HackathonShristiKutiaKeSath/issues"
+  },
+  "homepage": "https://github.com/pranavupadhyay123/HackathonShristiKutiaKeSath#readme",
+  "description": ""
+}
