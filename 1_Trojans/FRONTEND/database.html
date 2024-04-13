@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rescued Animals Database</title>
+</head>
+<body>
+  <h1>Rescued Animals Database</h1>
+
+  <form action="process_data.php" method="post">
+    <label for="name">Animal Name:</label><br>
+    <input type="text" id="name" name="name" required><br><br>
+
+    <label for="species">Species:</label><br>
+    <input type="text" id="species" name="species" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" rows="4" cols="50"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

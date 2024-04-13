@@ -1,0 +1,2 @@
+@media print{body.admin header,body.admin nav,body.admin.has-sidebar header,body.admin.has-sidebar nav{display:none}body.admin #content-wrap .wrapper,body.admin #content-wrap .wrapper #main,body.admin.has-sidebar #content-wrap .wrapper,body.admin.has-sidebar #content-wrap .wrapper #main{margin:0;padding:0;width:100%}article{margin:0;padding:0}}
+/*# sourceMappingURL=print-872ea771.css.map*/
