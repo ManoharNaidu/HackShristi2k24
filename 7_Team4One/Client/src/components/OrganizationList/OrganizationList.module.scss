@@ -1,0 +1,51 @@
+.orgList {
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-bs);
+  overflow: hidden;
+
+  .title {
+    padding: 1rem 1rem 0 1rem;
+  }
+}
+
+.sideOrg {
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.3rem;
+    gap: 0.1rem;
+    padding: 0 1rem 1rem;
+
+    li {
+      list-style: none;
+      display: flex;
+      gap: 0.5rem;
+
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+
+      a {
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        color: #0a0a0a;
+        line-height: 1;
+        display: block;
+        margin-bottom: 0.4rem;
+
+        :hover {
+          cursor: pointer;
+        }
+      }
+      p {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-muted);
+      }
+    }
+  }
+}

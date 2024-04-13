@@ -1,0 +1,76 @@
+.alert {
+  --alert-error-color: #bc1111;
+  --alert-error-border: #ffcccc;
+  --alert-warning-color: #ff8c00;
+  --alert-warning-border: #ffd8b1;
+  --alert-success-color: #008000;
+  --alert-success-border: #d4edda;
+  --alert-info-color: #0056b3;
+  --alert-info-border: #cce5ff;
+
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  --alert-color: #444;
+  --alert-border: #e6e6e6;
+
+  border: solid 1px var(--alert-border);
+  color: var(--alert-color);
+
+  margin-bottom: 1.6rem;
+  background-color: white;
+  box-shadow: var(--box-bs);
+
+  .alert-content {
+    display: flex;
+    flex-grow: 1;
+
+    .alert-icon {
+      flex-shrink: 0;
+    }
+
+    .message {
+      margin-left: 1rem;
+      font-weight: 500;
+    }
+  }
+
+  .close {
+    display: flex;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 1rem;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .close:hover {
+    color: #000;
+  }
+}
+
+.error {
+  --alert-color: var(--alert-error-color);
+  --alert-border: var(--alert-error-border);
+}
+
+.warning {
+  --alert-color: var(--alert-warning-color);
+  --alert-border: var(--alert-warning-border);
+}
+
+.success {
+  --alert-color: var(--alert-success-color);
+  --alert-border: var(--alert-success-border);
+}
+
+.info {
+  --alert-color: var(--alert-info-color);
+  --alert-border: var(--alert-info-border);
+}
